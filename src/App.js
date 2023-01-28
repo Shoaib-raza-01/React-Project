@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+export default function App(props) {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [text, setText] = useState("Wake-Up it's daytime");
+    const [theme, setTheme] = useState("light")
+    
+    const handleClick = () =>{
+        if (text === "Wake-Up it's daytime" && theme === "light") {
+            setText("It's time to sleep")
+            setTheme("dark")
+            document.body.style.backgroundColor = "#000000"
+        } else {
+            setText("Wake-Up it's daytime")
+            setTheme("light")
+            document.body.style.backgroundColor = "#8e8e7d"
+        }
+    }
+    return (
+        <div>
+        <div className = {`card ${theme}`} onClick={handleClick}>
+            <p className="text">{text}</p>
+        </div>
+        </div>
+    )
 }
-
-export default App;

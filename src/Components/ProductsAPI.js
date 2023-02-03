@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import ProductCard from './ProductCard';
 
 function ProductsAPI() {
 
@@ -18,11 +19,16 @@ function ProductsAPI() {
     }, []);
 
   return (
-    <ul>
-        <li>
+    <div style={{display : "flex", flexWrap : "wrap"}}>
+        {/* <li>
             {product.length > 0 && product[0].title}
-        </li>
-    </ul>
+        </li> */}
+        {
+            product.map((items) =>{
+                return <ProductCard key = {items.id} prodObj = {items} />
+            })
+        }
+    </div>
   )
 }
 

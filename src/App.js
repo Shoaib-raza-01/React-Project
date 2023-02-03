@@ -1,14 +1,14 @@
 import React from 'react';
-// import Todo from './Components/Todo'
+import Todo from './Components/Todo'
 // import ClockTimmer from './Components/ClockTimmer';
-import ProductsAPI from './Components/ProductsAPI';
+// import ProductsAPI from './Components/ProductsAPI';
 
 export default function App(props) {
     return (
         <div>
-             {/* <Todo /> */}
+             <Todo />
              {/* <ClockTimmer /> */}
-             <ProductsAPI />
+             {/* <ProductsAPI /> */}
         </div>
     )
 }

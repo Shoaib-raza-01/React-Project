@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ProductCard(props) {
     const style = {
@@ -13,7 +14,10 @@ function ProductCard(props) {
     <div style={style}>
       {/* {props.prodObj.title} */}
       <img src={props.prodObj.image} alt="image" width='100px' height = '100px'/>
+      
+      <Link to= {`/products/${props.prodObj.id}`}>
       <h3>{props.prodObj.title}</h3>
+</Link>
       <p>{props.prodObj.description}</p>
     </div>
   )

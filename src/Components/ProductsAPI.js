@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProductCard from './ProductCard';
+import Navbar from './Navbar';
 
 function ProductsAPI() {
 
@@ -10,21 +11,13 @@ function ProductsAPI() {
     const handleChange = (event) =>{
        const query = event.target.value;
       //  console.log(query)
-       query === "all" ? axios.get("https://fakestoreapi.com/products")
-       .then(
-           function(response){
-               // console.log(response.data)
-               setProduct(response.data);
-           }
-
-       ) : axios.get(`{https://fakestoreapi.com/products/${query}}`)
-       .then(
-           function(response){
-               // console.log(response.data)
-               setProduct(response.data);
-           }
-
-       )
+       axios.get(
+        query ==="all" ? "https://fakestoreapi.com/products":
+        `https://fakestoreapi.com/products/category/${query}`
+        ).then((response) =>{
+            setProduct(response.data)
+        });
+       
     }
 
     useEffect(function (){
@@ -41,14 +34,15 @@ function ProductsAPI() {
 
   return (
     <>
+        <Navbar />
       <select onChange={handleChange}>
         <option value="all" >All</option>
-        <option value="men,s clothing">Men's Clothing</option>
+        <option value="men's clothing">Men's Clothing</option>
         <option value="jewelery">jewelery</option>
         <option value="electronics">electronics</option>
-        <option value="women,s clothing">women's clothing</option>
+        <option value="women's clothing">women's clothing</option>
       </select>
-      <div style={{display : "flex", flexWrap : "wrap"}}>
+      <div style={{display : "flex", flexWrap : "wrap", justifyContent: "center" }}>
         {/* <li>
             {product.length > 0 && product[0].title}
         </li> */}

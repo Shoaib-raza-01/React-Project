@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar';
 
 import './Todo.css'
 function Todo() {
@@ -44,7 +45,9 @@ let deleteBtn= (todoId)=>{
 // }
 
   return (
+    
     <div>
+      <Navbar />
       <div className="todo-container">
         <h1>TODO List App</h1>
         <input type="text" name="value" id="userInput" value={inputValue} onChange={handleChange} />  &nbsp; &nbsp;

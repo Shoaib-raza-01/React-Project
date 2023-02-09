@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Card.css';
+import Navbar from './Navbar';
 
 export default function Card() {
     const [text, setText] = useState("Wake-Up it's daytime");
@@ -31,6 +32,7 @@ export default function Card() {
     }
   return (
     <div>
+        <Navbar />
         <div className = {`card ${theme}`} onClick={handleClick}>
             <p className="text">{text}</p>
         </div>

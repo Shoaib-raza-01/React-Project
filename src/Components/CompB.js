@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { StateContext } from './CompA'  //import that named export to use it
 
 function CompB(props) {
 
@@ -9,13 +10,15 @@ function CompB(props) {
   const handleClick = ()=>{
     props.update(props.value + 1 )
   }
+
+  const state = useContext(StateContext)
   return (
     <div 
       onClick={handleClick}
       style={{
       border : "1px solid red"
     }}>
-      <p>Component B : {props.value}</p>
+      <p>Component B : {state}</p>
     </div>
   )
 }

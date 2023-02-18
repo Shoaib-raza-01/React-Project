@@ -21,7 +21,7 @@ function ProductPage() {
     <div>
       {productData && (
         <>
-          <img src={productData.image} alt="image" height='150' width='150' />
+          <img src={productData.image} height='150' width='150' />
           <p>{productData.title}</p>
           <p>{productData.description}</p>
           <p>${productData.price}</p>

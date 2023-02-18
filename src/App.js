@@ -9,6 +9,7 @@ import ProductsAPI from './Components/ProductsAPI';
 import ProductPage from './Components/ProductPage';
 import Card from './Components/Card';
 import NotFoundPage from './Components/NotFoundPage';
+import Cart from './Components/Cart';
 
 export default function App(props) {
     return (
@@ -25,6 +26,7 @@ export default function App(props) {
                 <Route path='/' element= {<ProductsAPI />}/>
                 <Route path='/todo' element = {<Todo />} />
                 <Route path='/products/:id' element = {<ProductPage />} />
+                <Route path='/cart' element = {<Cart />} />
                 <Route path = '/card' element={<Card />}/>
 
 {/* handle 404 error  */}

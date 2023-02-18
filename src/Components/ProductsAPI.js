@@ -42,6 +42,7 @@ function ProductsAPI() {
         <option value="electronics">electronics</option>
         <option value="women's clothing">women's clothing</option>
       </select>
+      
       <div style={{display : "flex", flexWrap : "wrap", justifyContent: "center" }}>
         {/* <li>
             {product.length > 0 && product[0].title}
